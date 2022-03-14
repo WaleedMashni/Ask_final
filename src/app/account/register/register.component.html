@@ -1,0 +1,117 @@
+    <!--<div class="se-pre-con"></div>-->
+    <div class="theme-layout">
+        <div class="container-fluid pdng0">
+            <div class="row merged">
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                    <div class="land-featurearea">
+                        <div class="land-meta">
+                            <h1 style=" position: relative;  bottom: 79px; font-size: 41px;
+                            font-family: initial;">Ask</h1>
+                            <p style="position: relative;    bottom: 77px;">
+                                Ask is free to use for as long as you want with two active projects.
+                            </p>
+                            <div class="friend-logo">
+                                <span><img src="./assets/images/wink.png" alt=""
+                                        style="position: relative;     top: 37px;"></span>
+                            </div>
+                            <p class="folow-me">Follow Us on</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                    <div class="login-reg-bg show">
+                        <div class="log-reg-area sign">
+                            <h2 class="log-title">Login</h2>
+                               
+                       
+                        </div>
+                        <div class="log-reg-area reg">
+                              <!--  The Nautigal-->
+                            <h2 class="log-title"
+                            style="font-family: 'Lobster'; font-size:34px; text-align:center;  margin-top: 21px; position: relative; top: -1px;">
+                            Register Now</h2>
+
+
+                            <!-- Form -->
+                            <form [formGroup]="registerForm"  >
+
+                                <!-- First Name -->
+                                <div class="form-group">	
+                                  <input type="text" matInput  formControlName="firstName">
+                                  <label class="control-label" for="input">First Name</label><i class="mtrl-select"></i>
+                                  <mat-error *ngIf="registerForm.controls['firstName'].hasError('required')">
+                                    First Name is required
+                                  </mat-error>
+                                </div>
+
+                                <!-- Last Name -->
+                                <div class="form-group">	
+                                    <input type="text" matInput  formControlName="lastName">
+                                    <label class="control-label" for="input">Last Name</label><i class="mtrl-select"></i>
+                                    </div>
+
+                                <!-- Email -->
+                                <div class="form-group">	
+                                    <input type="email" matInput  formControlName="email" >
+                                    <label class="control-label" for="input">Email</label><i class="mtrl-select"></i>
+                                    <mat-error *ngIf="registerForm.controls['email'].hasError('email') && !registerForm.controls['email'].hasError('required')">
+                                        Please enter a valid email address
+                                      </mat-error>
+                                      <mat-error *ngIf="registerForm.controls['email'].hasError('required')">
+                                        Email is required
+                                      </mat-error>  
+                                </div>
+                                  
+                                <!-- password -->
+                                <div class="form-group">	
+                                  <input type="password" matInput  formControlName="password" >
+                                  <label class="control-label" for="input">Password</label><i class="mtrl-select"></i>
+                                  <mat-error *ngIf="registerForm.controls['password'].hasError('minlength') && !registerForm.controls['password'].hasError('required')">
+                                    Please enter strong password
+                                  </mat-error>
+                                  <mat-error *ngIf="registerForm.controls['password'].hasError('required')">
+                                    password is required
+                                  </mat-error>
+                                </div>
+
+
+                                <!-- Gender
+                                 <div class="form-radio">
+                                    <div class="radio">
+                                      <label>
+                                        <input formControlName="radio" type="radio" id="m" name="radio" checked="checked"><i class="check-box"></i>Male
+                                      </label>
+                                    </div>
+                                    <div class="radio">
+                                      <label>
+                                        <input formControlName="radio" type="radio"  id="f"  name="radio"><i class="check-box"></i>Female
+                                      </label>
+                                    </div>
+                                  </div> -->
+
+                                  
+                                <div class="checkbox">
+                                  <label>
+                                    <input   type="checkbox"    formControlName="check" checked="checked"><i class="check-box"></i>Accept Terms &amp; Conditions ?
+                                  </label>
+                                  <mat-error *ngIf="registerForm.controls['check'].hasError('required')">
+                                    check box is required
+                                  </mat-error>
+                                </div>
+
+                                
+                               
+
+                                <div class="submit-btns">
+                                    <button (click)="goToLoginPage()"  [disabled]="!registerForm.valid"  class="mtr-btn signin" type="button"><span>Register</span></button>   
+                                    <p (click)="goToLoginPage()" style="cursor: pointer; text-align: center; color: black;">
+                                        Already have an account? <a style="color:blue">Login Now! </a></p>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        
